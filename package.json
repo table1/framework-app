@@ -1,0 +1,17 @@
+{
+  "name": "framework-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Framework App monorepo",
+  "packageManager": "pnpm@10.6.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter @framework/desktop dev",
+    "build": "pnpm --filter @framework/contracts build && pnpm --filter @framework/core build && pnpm --filter @framework/docs build && pnpm --filter @framework/node-adapters build && pnpm --filter @framework/ui-shared build && pnpm --filter @framework/desktop build",
+    "typecheck": "pnpm --filter @framework/contracts typecheck && pnpm --filter @framework/core typecheck && pnpm --filter @framework/docs typecheck && pnpm --filter @framework/node-adapters typecheck && pnpm --filter @framework/ui-shared typecheck && pnpm --filter @framework/desktop typecheck",
+    "clean": "pnpm --filter @framework/contracts clean && pnpm --filter @framework/core clean && pnpm --filter @framework/docs clean && pnpm --filter @framework/node-adapters clean && pnpm --filter @framework/ui-shared clean && pnpm --filter @framework/desktop clean"
+  }
+}

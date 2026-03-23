@@ -1,0 +1,202 @@
+:root {
+  color-scheme: light;
+  font-family: "SF Pro Text", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.app-shell {
+  --activity-width: 48px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: var(--activity-width) 224px 1fr;
+  background: #ffffff;
+  transition: grid-template-columns 140ms ease;
+}
+
+.app-shell:has(.activity-bar:hover) {
+  --activity-width: 188px;
+}
+
+.activity-bar {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  width: 100%;
+  padding: 8px 6px;
+  background: #eceff3;
+  border-right: 1px solid #d6dbe3;
+  overflow: hidden;
+  transition: width 140ms ease;
+}
+
+.activity-button {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  border-radius: 4px;
+  color: #667085;
+  cursor: pointer;
+  padding: 0 7px;
+  position: relative;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.activity-button:hover {
+  background: #dfe5ec;
+  color: #344054;
+}
+
+.activity-button-active {
+  background: #d5dbe3;
+  color: #111827;
+  font-weight: 600;
+}
+
+.activity-button-active::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 7px;
+  height: 18px;
+  width: 2px;
+  border-radius: 999px;
+  background: #111827;
+}
+
+.activity-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+}
+
+.activity-button-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-3px);
+  transition: opacity 120ms ease, transform 120ms ease;
+}
+
+.activity-bar:hover .activity-button-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mode-sidebar {
+  padding: 10px 8px;
+  background: #f3f5f8;
+  border-right: 1px solid #dde3ea;
+}
+
+.mode-sidebar-header {
+  padding: 0 8px 8px;
+}
+
+.mode-label {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.mode-nav {
+  display: grid;
+  gap: 2px;
+}
+
+.mode-nav-item {
+  min-height: 30px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: #4b5563;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+}
+
+.mode-nav-item:hover {
+  background: #e7ebf0;
+  color: #111827;
+}
+
+.mode-nav-item-active {
+  background: #e1e6ec;
+  color: #111827;
+  font-weight: 600;
+}
+
+.content-area {
+  min-width: 0;
+  padding: 20px 24px;
+}
+
+.content-header {
+  margin-bottom: 20px;
+}
+
+.content-eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.content-header h1,
+.content-body p {
+  margin: 0;
+}
+
+.content-header h1 {
+  font-size: 1.875rem;
+  line-height: 1.1;
+}
+
+.content-body {
+  max-width: none;
+}
+
+.content-body p {
+  color: #4b5563;
+}
